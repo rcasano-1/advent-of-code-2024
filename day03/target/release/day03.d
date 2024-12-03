@@ -1,0 +1,1 @@
+D:\Repos\Personal\advent-of-code-2024\day03\target\release\day03.exe: D:\Repos\Personal\advent-of-code-2024\day03\src\main.rs D:\Repos\Personal\advent-of-code-2024\day03\src\my-input.txt D:\Repos\Personal\advent-of-code-2024\day03\src\test-input-part-2.txt D:\Repos\Personal\advent-of-code-2024\day03\src\test-input.txt
