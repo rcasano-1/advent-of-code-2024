@@ -1,0 +1,1 @@
+D:\Repos\Personal\advent-of-code-2024\day04\target\debug\day04.exe: D:\Repos\Personal\advent-of-code-2024\day04\src\main.rs D:\Repos\Personal\advent-of-code-2024\day04\src\test-input-dots-part-2.txt D:\Repos\Personal\advent-of-code-2024\day04\src\test-input-dots.txt D:\Repos\Personal\advent-of-code-2024\day04\src\test-input.txt
