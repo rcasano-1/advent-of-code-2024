@@ -1,6 +1,6 @@
 const PART_1_EXAMPLE_INPUT: &str = include_str!("test-input.txt");
-const PART_1_EXAMPLE_INPUT_DOTS: &str = include_str!("test-input-dots.txt");
-const PART_2_EXAMPLE_INPUT_DOTS: &str = include_str!("test-input-dots-part-2.txt");
+// const PART_1_EXAMPLE_INPUT_DOTS: &str = include_str!("test-input-dots.txt");
+// const PART_2_EXAMPLE_INPUT_DOTS: &str = include_str!("test-input-dots-part-2.txt");
 
 fn part_1(input: &str) -> u64 {
     let lines: Vec<&str> = input.lines().collect();
