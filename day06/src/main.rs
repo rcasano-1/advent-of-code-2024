@@ -1,7 +1,6 @@
 use std::collections::HashSet;
 
 const EXAMPLE: &str = include_str!("example.txt");
-const INPUT: &str = include_str!("my-input.txt");
 
 // Common functions
 fn parse_input(input: &str) -> Vec<Vec<char>> {
@@ -163,18 +162,8 @@ fn main() {
         Err(e) => println!("Error: {}", e),
     }
 
-    match part_1(INPUT) {
-        Ok(result) => println!("Part 1 - my input: {}", result),
-        Err(e) => println!("Error: {}", e),
-    }
-
     match part_2(EXAMPLE) {
         Ok(result) => println!("Part 2: {}", result),
-        Err(e) => println!("Error: {}", e),
-    }
-
-    match part_2(INPUT) {
-        Ok(result) => println!("Part 2 - my input: {}", result),
         Err(e) => println!("Error: {}", e),
     }
 }
