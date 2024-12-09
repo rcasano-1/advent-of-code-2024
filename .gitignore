@@ -1,2 +1,5 @@
 # Rust build results
 [Tt]arget/
+
+# All personal input files
+input.txt
