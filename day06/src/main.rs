@@ -3,6 +3,7 @@ use std::collections::HashSet;
 const EXAMPLE: &str = include_str!("example.txt");
 const INPUT: &str = include_str!("my-input.txt");
 
+// Common functions
 fn parse_input(input: &str) -> Vec<Vec<char>> {
     input.lines().map(|line| line.chars().collect()).collect()
 }
@@ -16,6 +17,7 @@ fn starting_position(map: &[Vec<char>]) -> Option<(i32, i32)> {
     None
 }
 
+// Part 1 functions
 fn predict_guard_route(map: &[Vec<char>], (x, y): (i32, i32)) -> usize {
     let mut directions = [(0, -1), (1, 0), (0, 1), (-1, 0)].iter().cycle();
     let (mut dx, mut dy) = directions
@@ -52,11 +54,16 @@ fn predict_guard_route(map: &[Vec<char>], (x, y): (i32, i32)) -> usize {
 
 fn part_1(input: &str) -> Result<usize, &str> {
     let map: Vec<Vec<char>> = parse_input(input);
+
+    let start_time = std::time::Instant::now();
     let start: (i32, i32) = starting_position(&map).ok_or("Starting position not found")?;
     let result: usize = predict_guard_route(&map, start);
+    println!("Part 1 time: {:?}", start_time.elapsed());
+
     Ok(result)
 }
 
+// Part 2 functions
 fn record_guard_route(map: &[Vec<char>], (x, y): (i32, i32)) -> HashSet<(i32, i32)> {
     let mut directions = [(0, -1), (1, 0), (0, 1), (-1, 0)].iter().cycle();
     let (mut dx, mut dy): &(i32, i32) = directions
@@ -140,9 +147,13 @@ fn insert_obstacle_loops(
 
 fn part_2(input: &str) -> Result<u64, &str> {
     let map: Vec<Vec<char>> = parse_input(input);
+
+    let start_time = std::time::Instant::now();
     let start: (i32, i32) = starting_position(&map).ok_or("Starting position not found")?;
     let guard_route: HashSet<(i32, i32)> = record_guard_route(&map, start);
     let result: u64 = insert_obstacle_loops(&map, start, &guard_route);
+    println!("Part 2 time: {:?}", start_time.elapsed());
+
     Ok(result)
 }
 
