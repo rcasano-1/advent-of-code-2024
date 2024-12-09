@@ -18,6 +18,8 @@ fn starting_position(map: &[Vec<char>]) -> Option<(i32, i32)> {
 
 // Part 1 functions
 fn predict_guard_route(map: &[Vec<char>], (x, y): (i32, i32)) -> usize {
+    // Directions will always begin with "up" vertically, since the guard is always facing up at the start ('^')
+    // After that, we cycle "right" (clockwise, 90 degrees) for each obstacle encountered
     let mut directions = [(0, -1), (1, 0), (0, 1), (-1, 0)].iter().cycle();
     let (mut dx, mut dy) = directions
         .next()
