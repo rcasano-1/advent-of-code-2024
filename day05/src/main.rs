@@ -2,6 +2,7 @@ use std::collections::HashMap;
 
 const EXAMPLE: &str = include_str!("example.txt");
 
+// Common functions
 fn parse_input(input: &str) -> (Vec<(u32, u32)>, Vec<Vec<u32>>) {
     let mut lines = input.lines();
 
@@ -57,7 +58,7 @@ fn is_correct_ordering(page_ordering_map: &HashMap<u32, Vec<u32>>, update: &[u32
     is_correct_ordering
 }
 
-// Part 1
+// Part 1 functions
 fn sum_middle_pages_of_correctly_ordered_updates(
     page_ordering_map: &HashMap<u32, Vec<u32>>,
     updates: &[Vec<u32>],
@@ -71,11 +72,16 @@ fn sum_middle_pages_of_correctly_ordered_updates(
 
 fn part_1(input: &str) -> u32 {
     let (page_ordering_rules, updates) = parse_input(input);
+
+    let start_time = std::time::Instant::now();
     let page_ordering_map = build_page_ordering_map(&page_ordering_rules);
-    sum_middle_pages_of_correctly_ordered_updates(&page_ordering_map, &updates)
+    let sum = sum_middle_pages_of_correctly_ordered_updates(&page_ordering_map, &updates);
+    println!("Part 1 time: {:?}", start_time.elapsed());
+
+    sum
 }
 
-// Part 2
+// Part 2 functions
 fn sort_updates(update_to_fix: &[u32], page_ordering_map: &HashMap<u32, Vec<u32>>) -> Vec<u32> {
     let mut sorted_update = update_to_fix.to_vec();
 
@@ -111,8 +117,13 @@ fn sum_middle_pages_of_sorted_invalid_updates(
 
 fn part_2(input: &str) -> u32 {
     let (page_ordering_rules, updates) = parse_input(input);
+
+    let start_time = std::time::Instant::now();
     let page_ordering_map = build_page_ordering_map(&page_ordering_rules);
-    sum_middle_pages_of_sorted_invalid_updates(&updates, &page_ordering_map)
+    let sum = sum_middle_pages_of_sorted_invalid_updates(&updates, &page_ordering_map);
+    println!("Part 2 time: {:?}", start_time.elapsed());
+
+    sum
 }
 
 fn main() {
